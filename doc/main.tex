@@ -1,0 +1,50 @@
+%\documentclass[10pt,twoside]{uvicthesis}
+\documentclass[10pt,oneside]{uvicthesis}
+
+\usepackage{graphicx}
+
+\author{Arthur Dent}
+\department{Department of Electrical and Computer Engineering}
+\year{2019}
+\title{The Answer to the Ultimate Question About the Life, the Universe, and
+  Everything}
+\degrees{%
+B.A.Sc., Massachusetts Institute of Technology, 2000 \\
+M.A.Sc., University of Waterloo, 2004
+}
+\doctype{Report}
+\degreetype{Master of Engineering}
+
+\newcommand{\term}[1]{\index{#1}{#1}}
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+
+\begin{abstract}
+This is the abstract.
+\end{abstract}
+
+\tableofcontents
+\listoftables
+\listoffigures
+\include{acknowledgements}
+\include{dedication}
+
+\mainmatter
+
+\include{introduction}
+\include{background}
+\include{results}
+\include{conclusions}
+
+\backmatter
+
+\bibliographystyle{plain}
+\bibliography{references}
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex%
+
+\end{document}
