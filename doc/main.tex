@@ -12,10 +12,24 @@
 B.A.Sc., Massachusetts Institute of Technology, 2000 \\
 M.A.Sc., University of Waterloo, 2004
 }
-\doctype{Report}
-\degreetype{Master of Engineering}
+
+%\doctype{Report}
+%\degreetype{Master of Engineering}
+%\doctype{Thesis}
+%\degreetype{Master of Applied Science}
+\doctype{Dissertation}
+\degreetype{Doctor of Philosophy}
 
 \newcommand{\term}[1]{\index{#1}{#1}}
+
+\newcommand{\committee}{
+  \panellist{Dr.\ Jane Doe}{Supervisor}
+    {Department of Electrical and Computer Engineering}
+  \panellist{Dr.\ John Doe}{Departmental Member}
+    {Department of Electrical and Computer Engineering}
+  \panellist{Dr.\ Anon Y.\ Mous}{Outside Member}
+    {Department of Computer Science}
+}
 
 \begin{document}
 
@@ -30,6 +44,7 @@ This is the abstract.
 \tableofcontents
 \listoftables
 \listoffigures
+\lstlistoflistings
 \include{acknowledgements}
 \include{dedication}
 
@@ -37,6 +52,7 @@ This is the abstract.
 
 \include{introduction}
 \include{background}
+\include{method}
 \include{results}
 \include{conclusions}
 

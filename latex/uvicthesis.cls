@@ -140,13 +140,26 @@
     & \phantom{\copyright} University of Victoria
     \end{tabular} \\[\baselineskip]
     All rights reserved.
-    This dissertation may not be reproduced in whole or in part, by \\[\baselineskip]
+    This \MakeLowercase{\uvt@doctype}\ may not be reproduced in whole or in part, by \\[\baselineskip]
     photocopying or other means, without the permission of the author.
   \end{center}
   \thispagestyle{empty}
   \pagestyle{empty}
   \clearpage%
   \pagestyle{plain}
+  \begin{center}%
+    {\large\bfseries\uvt@title} \\[\baselineskip]
+    by \\[\baselineskip]
+    {\large \uvt@author} \\[\baselineskip]
+    \begin{tabular}{c}%
+    \uvt@degrees
+    \end{tabular} \\[\baselineskip]
+    %\\[\baselineskip]
+  \end{center}%
+  \vspace*{1.00in}
+  Supervisory Committee \\[\baselineskip]
+  \committee%
+  \clearpage%
 }
 
 \newenvironment{abstract}{%
@@ -171,5 +184,34 @@
 
 \renewcommand*{\lstlistlistingname}{List of Listings}
 
+% Number the bibliography section and include it in the TOC.
+% NOTE: We must override the thebibliography environment before the bibunits
+% and natbib packages are loaded.
+\renewenvironment{thebibliography}[1]
+   {\chapter{\bibname}%
+    \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
+    \list{\@biblabel{\@arabic\c@enumiv}}%
+         {\settowidth\labelwidth{\@biblabel{#1}}%
+          \leftmargin\labelwidth
+          \advance\leftmargin\labelsep
+          \@openbib@code
+          \usecounter{enumiv}%
+          \let\p@enumiv\@empty
+          \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+    \sloppy
+    \clubpenalty4000
+    \@clubpenalty \clubpenalty
+    \widowpenalty4000%
+    \sfcode`\.\@m}
+   {\def\@noitemerr
+     {\@latex@warning{Empty `thebibliography' environment}}%
+    \endlist}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\panellist}[3]{%
+  \vspace*{0.375in}%
+  \par\noindent\rule{\linewidth}{0.5mm} \\
+  #1, #2 \\ (#3)
+}
