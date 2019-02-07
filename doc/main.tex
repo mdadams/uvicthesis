@@ -1,27 +1,40 @@
 %\documentclass[10pt,twoside]{uvicthesis}
 \documentclass[10pt,oneside]{uvicthesis}
 
-\usepackage{graphicx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Information about the author and document.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{Arthur Dent}
-\department{Department of Electrical and Computer Engineering}
-\year{2019}
+% The title of the document.
 \title{The Answer to the Ultimate Question About the Life, the Universe, and
   Everything}
+
+% The author of the document.
+\author{Arthur Dent}
+
+% The department of the author.
+\department{Department of Electrical and Computer Engineering}
+
+% The degrees already held by the author.
 \degrees{%
 B.A.Sc., Massachusetts Institute of Technology, 2000 \\
 M.A.Sc., University of Waterloo, 2004
 }
 
+% The year of publication of the document.
+\year{2019}
+
+% The document type (i.e., thesis, dissertation, or report).
 %\doctype{Report}
-%\degreetype{Master of Engineering}
 %\doctype{Thesis}
-%\degreetype{Master of Applied Science}
 \doctype{Dissertation}
+
+% The type of degree associated with this document.
+%\degreetype{Master of Engineering}
+%\degreetype{Master of Applied Science}
 \degreetype{Doctor of Philosophy}
 
-\newcommand{\term}[1]{\index{#1}{#1}}
-
+% The members of the Supervisory Committee.
 \newcommand{\committee}{
   \panellist{Dr.\ Jane Doe}{Supervisor}
     {Department of Electrical and Computer Engineering}
@@ -31,9 +44,27 @@ M.A.Sc., University of Waterloo, 2004
     {Department of Computer Science}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some other convenience macros.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\term}[1]{\index{#1}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of the preamble.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title page.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front matter (i.e., abstract, table of contents, etc.)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \frontmatter
 
@@ -48,6 +79,10 @@ This is the abstract.
 \include{acknowledgements}
 \include{dedication}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Main matter (i.e., chapters and appendices).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \mainmatter
 
 \include{introduction}
@@ -56,11 +91,23 @@ This is the abstract.
 \include{results}
 \include{conclusions}
 
+\appendix
+
+\include{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Back matter (i.e., bibliiography and index).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \backmatter
 
 \bibliographystyle{plain}
 \bibliography{references}
 \addcontentsline{toc}{chapter}{\indexname}
 \printindex%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of document.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
