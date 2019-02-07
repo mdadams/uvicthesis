@@ -8,6 +8,7 @@
 \usepackage{ifpdf}
 
 \RequirePackage{ifthen}
+\RequirePackage{etoolbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option processing
@@ -123,24 +124,32 @@
 
 \renewcommand{\maketitle}{%
   \begin{center}%
-    {\large\bfseries\uvt@title} \\[\baselineskip]
-    by \\[\baselineskip]
-    {\large \uvt@author} \\[\baselineskip]
+    {\large\bfseries\uvt@title} \\%[\baselineskip]
+    \vspace*{2em}%
+    by \\%[\baselineskip]
+    \vspace*{2em}%
+    {\large \uvt@author} \\%[\baselineskip]
+    \vspace*{1em}%
     \begin{tabular}{c}%
     \uvt@degrees
-    \end{tabular} \\[\baselineskip]
+    \end{tabular} \\%[\baselineskip]
     %\\[\baselineskip]
-    A \uvt@doctype\ Submitted in Partial Fulfillment of the \\[\baselineskip]
-    Requirements for the Degree of \\[\baselineskip]
-    \uvt@degreetype \\[\baselineskip]
-    in the \uvt@department \\[\baselineskip]
+    \vspace*{4em}%
+    A \uvt@doctype\ Submitted in Partial Fulfillment of the \\%[\baselineskip]
+    Requirements for the Degree of \\%[\baselineskip]
+    \vspace*{1em}%
+    {\scshape\uvt@degreetype} \\%[\baselineskip]
+    \vspace*{1em}%
+    in the \uvt@department \\%[\baselineskip]
     \vfill
     \begin{tabular}{cl}
-    & \copyright\ \uvt@author, \uvt@year\\[\baselineskip]
+    & \copyright\ \uvt@author, \uvt@year\\%[\baselineskip]
     & \phantom{\copyright} University of Victoria
-    \end{tabular} \\[\baselineskip]
+    \end{tabular} \\%[\baselineskip]
+    \vspace*{1em}%
     All rights reserved.
-    This \MakeLowercase{\uvt@doctype}\ may not be reproduced in whole or in part, by \\[\baselineskip]
+    This \MakeLowercase{\uvt@doctype}\ may not be reproduced
+    in whole or in part, by \\%[\baselineskip]
     photocopying or other means, without the permission of the author.
   \end{center}
   \thispagestyle{empty}
@@ -148,22 +157,28 @@
   \clearpage%
   \pagestyle{plain}
   \begin{center}%
-    {\large\bfseries\uvt@title} \\[\baselineskip]
-    by \\[\baselineskip]
-    {\large \uvt@author} \\[\baselineskip]
+    {\large\bfseries\uvt@title} \\%[\baselineskip]
+    \vspace*{2em}%
+    by \\%[\baselineskip]
+    \vspace*{2em}%
+    {\large \uvt@author} \\%[\baselineskip]
+    \vspace*{1em}%
     \begin{tabular}{c}%
     \uvt@degrees
-    \end{tabular} \\[\baselineskip]
+    \end{tabular} \\%[\baselineskip]
     %\\[\baselineskip]
   \end{center}%
   \vspace*{1.00in}
-  Supervisory Committee \\[\baselineskip]
+  \addcontentsline{toc}{chapter}{Supervisory Committee}
+  {\bfseries Supervisory Committee} \\%[\baselineskip]
+  \vspace*{1em}%
   \committee%
   \clearpage%
 }
 
 \newenvironment{abstract}{%
 \clearpage%
+\addcontentsline{toc}{chapter}{Abstract}
 \begin{center}
 \textbf{ABSTRACT}
 \end{center}
@@ -207,6 +222,21 @@
      {\@latex@warning{Empty `thebibliography' environment}}%
     \endlist}
 
+\newenvironment{acknowledgments}{%
+  \section*{Acknowledgments}
+  \addcontentsline{toc}{chapter}{Acknowledgments}
+  }{%
+}
+
+\newenvironment{dedication}{%
+  \clearpage%
+  \addcontentsline{toc}{chapter}{Dedication}
+  \null\vfill%
+}{%
+  \vfill\null%
+  \clearpage%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -215,3 +245,9 @@
   \par\noindent\rule{\linewidth}{0.5mm} \\
   #1, #2 \\ (#3)
 }
+
+% Probably this should be commented out.
+\pretocmd{\tableofcontents}{\addcontentsline{toc}{chapter}{Table of Contents}}{}{}
+\pretocmd{\listoffigures}{\addcontentsline{toc}{chapter}{List of Figures}}{}{}
+\pretocmd{\listoftables}{\addcontentsline{toc}{chapter}{List of Tables}}{}{}
+\pretocmd{\lstlistoflistings}{\addcontentsline{toc}{chapter}{List of Listings}}{}{}
