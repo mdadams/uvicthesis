@@ -191,7 +191,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % NOTE: The hyperref package should always be one of the last packages loaded.
-\RequirePackage[breaklinks=true,colorlinks=true,hyperindex=true,bookmarks=true,bookmarksnumbered=true,backref=false]{hyperref}%
+\RequirePackage[linktoc=all,breaklinks=true,colorlinks=true,hyperindex=true,bookmarks=true,bookmarksnumbered=true,backref=false]{hyperref}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % More bibliography setup
