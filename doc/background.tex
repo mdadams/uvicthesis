@@ -5,3 +5,20 @@
 You are not intimately familiar with the
 ``The Hitchhiker's Guide to the Galaxy'' \cite{Adams_1980a}?
 Surely, you jest.
+
+\begin{figure}
+\begin{minipage}{\textwidth}\centering%
+\begin{tikzpicture}%
+\tikzstyle{thing}=[rectangle,draw=blue!50,fill=blue!10,thick,minimum size=5em]
+\node[thing] (a) {Alpha};
+\node[thing] (b) [left=3em of a] {Beta};
+\node[thing] (c) [right=3em of a] {Gamma};
+\node[thing] (d) [below=3em of a] {Delta};
+\draw[->] (a) -- (b);
+\draw[->] (a) -- (c);
+\draw[->] (b) -- (d);
+\draw[->] (c) -- (d);
+\end{tikzpicture}%
+\end{minipage}%
+\caption{Gratuitous figure.}
+\end{figure}

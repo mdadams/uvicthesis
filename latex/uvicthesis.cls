@@ -40,6 +40,7 @@
 \RequirePackage[us]{datetime}
 \RequirePackage{enumitem}
 \RequirePackage{setspace}
+\RequirePackage{tikz}
 
 \RequirePackage{fancyhdr}
 
