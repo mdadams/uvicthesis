@@ -3,8 +3,8 @@
 % Created by Michael D. Adams (mdadams@ece.uvic.ca)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[10pt,twoside]{uvicthesis}
-\documentclass[10pt,oneside]{uvicthesis}
+\documentclass[10pt,twoside]{uvicthesis}
+%\documentclass[10pt,oneside]{uvicthesis}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Information about the author and document.
@@ -77,21 +77,13 @@ M.A.Sc., University of Waterloo, 2004
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Title page.
+% Front matter (i.e., title page, abstract, table of contents, etc.)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \frontmatter
 
 \maketitle
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Front matter (i.e., abstract, table of contents, etc.)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{abstract}
-This is the abstract.
-\end{abstract}
-
+\include{abstract}
 \tableofcontents
 \listoftables
 \listoffigures
@@ -125,6 +117,7 @@ This is the abstract.
 \bibliography{references}
 \addcontentsline{toc}{chapter}{\indexname}
 \printindex%
+\cleardoublepage%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % End of document.

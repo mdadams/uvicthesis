@@ -54,6 +54,8 @@
 \RequirePackage{makeidx}
 \makeindex
 
+\RequirePackage{lipsum}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page layout
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,15 +77,32 @@
 \setlength{\marginparwidth}{0pt}
 \setlength{\marginparpush}{0pt}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[LO]{\bfseries\rightmark}
-\fancyhead[RE]{\bfseries\leftmark}
-\fancypagestyle{plain}{%
+\if@twoside%
+  \fancypagestyle{plain}{%
     \fancyhf{}%
     \fancyhead[LE,RO]{\bfseries\thepage}%
-}
+  }
+  \fancypagestyle{myheadings}{%
+    \fancyhf{}
+    \fancyhead[LE,RO]{\bfseries\thepage}
+    \fancyhead[LO]{\bfseries\leftmark}
+    \fancyhead[RE]{\bfseries\rightmark}
+  }
+\else%
+  \fancypagestyle{plain}{%
+    \fancyhf{}%
+    \fancyhead[R]{\bfseries\thepage}%
+    %\fancyfoot[C]{\bfseries\thepage}%
+  }
+  \fancypagestyle{myheadings}{%
+    \fancyhf{}
+    \fancyhead[R]{\bfseries\thepage}
+    %\fancyhead[L]{\bfseries\leftmark}
+    %\fancyhead[R]{\bfseries\rightmark}
+    %\fancyfoot[C]{\bfseries\thepage}
+  }
+\fi%
+
 
 \floatplacement{figure}{tbp}
 \floatplacement{table}{tbp}
@@ -175,11 +194,13 @@
   \vspace*{1em}%
   \committee%
   \clearpage%
+  \pagestyle{plain}%
+  %\pagestyle{myheadings}%
 }
 
 \newenvironment{abstract}{%
 \clearpage%
-\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}%
 \begin{center}
 \textbf{ABSTRACT}
 \end{center}
@@ -224,14 +245,16 @@
     \endlist}
 
 \newenvironment{acknowledgments}{%
-  \section*{Acknowledgments}
-  \addcontentsline{toc}{chapter}{Acknowledgments}
+  \section*{Acknowledgments}%
+  \addcontentsline{toc}{chapter}{Acknowledgments}%
+  \markboth{}{}%
   }{%
 }
 
 \newenvironment{dedication}{%
   \clearpage%
-  \addcontentsline{toc}{chapter}{Dedication}
+  \markboth{}{}%
+  \addcontentsline{toc}{chapter}{Dedication}%
   \null\vfill%
 }{%
   \vfill\null%
@@ -252,3 +275,9 @@
 \pretocmd{\listoffigures}{\addcontentsline{toc}{chapter}{List of Figures}}{}{}
 \pretocmd{\listoftables}{\addcontentsline{toc}{chapter}{List of Tables}}{}{}
 \pretocmd{\lstlistoflistings}{\addcontentsline{toc}{chapter}{List of Listings}}{}{}
+
+\apptocmd{\mainmatter}{\pagestyle{myheadings}}{}{}
+
+\apptocmd{\bibliography}{\cleardoublepage}{}{}
+\apptocmd{\printindex}{\cleardoublepage}{}{}
+
