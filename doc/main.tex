@@ -3,16 +3,24 @@
 % Created by Michael D. Adams (mdadams@ece.uvic.ca)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% UVic Thesis Document Class Options
+% ==================================
+%
+% In addition to the options provided by the book document class, the
+% uvicthesis document class also supports the following options:
+%
+% review
+%     Enable review mode (e.g., use double spacing).
+%     This generally looks ugly but is very helpful if a reviewer
+%     (e.g., supervisor) wants to write annotations on the pages
+%     of the doucment in order to indicate corrections/revisions that
+%     should be made.
+
 \documentclass[
   10pt,
   twoside,
-  draft,
+  %review, % Uncomment for review mode.  (See above for details.)
 ]{uvicthesis}
-
-%\documentclass[10pt,oneside]{uvicthesis}
-
-% Uncomment the following line to enable review mode (e.g., double spaced).
-%\reviewmode%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Information about the author and document.
@@ -96,8 +104,9 @@ M.A.Sc., University of Waterloo, 2004
 \listoftables
 \listoffigures
 \lstlistoflistings
-\include{acknowledgements}
-\include{dedication}
+\preface
+\input{acknowledgements}
+\input{dedication}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Main matter (i.e., chapters and appendices).

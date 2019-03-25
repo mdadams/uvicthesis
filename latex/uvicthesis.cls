@@ -14,16 +14,16 @@
 % Option processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newif\if@uvt@draft%
-\@uvt@draftfalse%
+\newif\if@uvt@review%
+\@uvt@reviewfalse%
 
-\DeclareOption{draft}{%
-   \@uvt@drafttrue%
-   \PassOptionsToClass{draft}{book}%
+\DeclareOption{review}{%
+   \@uvt@reviewtrue%
 }
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
-\ProcessOptions
+
+\ProcessOptions\relax
 
 \LoadClass{book}
 
@@ -254,15 +254,15 @@
 
 \newenvironment{acknowledgments}{%
   \section*{Acknowledgments}%
-  \addcontentsline{toc}{chapter}{Acknowledgments}%
+  \addcontentsline{toc}{section}{Acknowledgments}%
   \markboth{}{}%
   }{%
 }
 
 \newenvironment{dedication}{%
-  \clearpage%
+  \cleardoublepage%
   \markboth{}{}%
-  \addcontentsline{toc}{chapter}{Dedication}%
+  \addcontentsline{toc}{section}{Dedication}%
   \null\vfill%
 }{%
   \vfill\null%
@@ -295,3 +295,17 @@
 \newcommand{\reviewmode}{%
   \doublespacing%
 }
+
+\if@uvt@review%
+  \reviewmode%
+\fi
+
+\newcommand{\preface}{%
+  \chapter*{Preface}
+  \addcontentsline{toc}{chapter}{Preface}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\endinput
