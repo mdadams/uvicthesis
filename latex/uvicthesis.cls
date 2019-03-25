@@ -3,7 +3,7 @@
 % at the University of Victoria, Victoria, British Columbia, Canada.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uvic_thesis}[2019/02/07 uvicthesis class]
+\ProvidesClass{uvicthesis}[2019/03/25 uvicthesis class]
 
 \usepackage{ifpdf}
 
@@ -13,6 +13,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Option processing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\if@uvt@draft%
+\@uvt@draftfalse%
+
+\DeclareOption{draft}{%
+   \@uvt@drafttrue%
+   \PassOptionsToClass{draft}{book}%
+}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions
