@@ -289,3 +289,9 @@
 \apptocmd{\bibliography}{\cleardoublepage}{}{}
 \apptocmd{\printindex}{\cleardoublepage}{}{}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\reviewmode}{%
+  \doublespacing%
+}
