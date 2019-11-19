@@ -38,6 +38,16 @@
 \else
 \RequirePackage{graphicx}
 \fi
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{amsbsy}
+\RequirePackage{amsxtra}
+\RequirePackage{mathdots}
+\RequirePackage{mathptmx}
+
 \RequirePackage{boxedminipage}
 \RequirePackage{comment}
 \RequirePackage{verbatim}
@@ -129,6 +139,9 @@
 % Theorem-like environments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newtheoremstyle{uvtheoremstyle}{}{}{\rmfamily}{}{\scshape}{}{0.5em}{}
+\theoremstyle{uvtheoremstyle}
+
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}{Lemma}[chapter]
 \newtheorem{proposition}{Proposition}[chapter]
@@ -136,7 +149,11 @@
 %\theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{example}{Example}[chapter]
-\newtheorem{pseudocode}{Pseudocode}
+%\newtheorem{pseudocode}{Pseudocode}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\pretocmd{\endexample}{\qed}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Front matter

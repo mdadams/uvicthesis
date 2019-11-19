@@ -4,6 +4,7 @@ LATEX_SOURCES = \
   background.tex \
   conclusions.tex \
   results.tex \
+  uvicthesis.cls \
 
 all: figures main.pdf main.ps
 .PHONY: all
