@@ -148,12 +148,22 @@
 \newtheorem{corollary}{Corollary}[chapter]
 %\theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
-\newtheorem{example}{Example}[chapter]
+%\newtheorem{example}{Example}[chapter]
 %\newtheorem{pseudocode}{Pseudocode}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
-\pretocmd{\endexample}{\qed}{}{}
+%\apptocmd{\beginexample}{\pushQED{\qed}}{}{}
+%\pretocmd{\endexample}{\popQED}{}{}
+
+\newtheorem{uvexample}{Example}[chapter]
+\newenvironment{example}[1][]{%
+  \begin{uvexample}[#1]%
+  \pushQED{\qed}%
+}{%
+  \popQED%
+  \end{uvexample}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Front matter
