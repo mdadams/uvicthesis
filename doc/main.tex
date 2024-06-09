@@ -81,6 +81,31 @@ M.A.Sc., University of Waterloo, 2004
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some setup for the listings package.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Flexible columns are used in an attempt to avoid extra spaces being
+% inserted into listings.
+\lstset{columns=flexible}
+
+\lstdefinestyle{cxx}{
+  language = C++,
+  basicstyle = {\ttfamily},
+  showspaces = false,
+  showtabs = false,
+  showstringspaces = false,
+  escapechar = @,
+  escapebegin = \rm,
+  xleftmargin = 4ex,
+  xrightmargin = 0ex,
+  tabsize = 4,
+}
+
+\lstdefinestyle{numbers}
+  {numbers=left,stepnumber=1,numberstyle=\tiny,numbersep=10pt}
+\lstdefinestyle{nonumbers}{numbers=none}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Some other convenience macros.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -30,11 +30,20 @@ x & y \\
 \caption{Another table}
 \end{table}
 
-\begin{lstlisting}[caption={Some caption.},frame=single]
+\begin{lstlisting}[
+  caption = {Some caption.},
+  frame = single,
+  style = cxx,
+]
 This is a listing.
 \end{lstlisting}
 
-\lstinputlisting[caption={Some caption.},frame=single]{software/hello.cpp}
+\lstinputlisting[
+  caption = {Some caption.},
+  frame = single,
+  style = cxx,
+  style = numbers,
+]{software/hello.cpp}
 
 \section{Lipsum}
 
