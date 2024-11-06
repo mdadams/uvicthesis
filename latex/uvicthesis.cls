@@ -72,6 +72,10 @@
 \RequirePackage{makeidx}
 \makeindex
 
+% Add TOC entries for the Table of Contents, List of Tables, List of Figures,
+% List of Listings, and so on.
+\RequirePackage[notindex]{tocbibind}
+
 \RequirePackage{lipsum}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -305,11 +309,11 @@
   #1, #2 \\ (#3)
 }
 
-% Probably this should be commented out.
-\pretocmd{\tableofcontents}{\addcontentsline{toc}{chapter}{Table of Contents}}{}{}
-\pretocmd{\listoffigures}{\addcontentsline{toc}{chapter}{List of Figures}}{}{}
-\pretocmd{\listoftables}{\addcontentsline{toc}{chapter}{List of Tables}}{}{}
-\pretocmd{\lstlistoflistings}{\addcontentsline{toc}{chapter}{List of Listings}}{}{}
+% The following was buggy and is no longer needed.
+%\pretocmd{\tableofcontents}{\addcontentsline{toc}{chapter}{\contentsname}}{}{}
+%\pretocmd{\listoffigures}{\addcontentsline{toc}{chapter}{List of Figures}}{}{}
+%\pretocmd{\listoftables}{\addcontentsline{toc}{chapter}{List of Tables}}{}{}
+%\pretocmd{\lstlistoflistings}{\addcontentsline{toc}{chapter}{List of Listings}}{}{}
 
 \apptocmd{\mainmatter}{\pagestyle{myheadings}}{}{}
 
