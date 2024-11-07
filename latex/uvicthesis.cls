@@ -228,6 +228,7 @@
     %\\[\baselineskip]
   \end{center}%
   \vspace*{1.00in}
+  \phantomsection%
   \addcontentsline{toc}{chapter}{Supervisory Committee}
   {\bfseries Supervisory Committee} \\%[\baselineskip]
   \vspace*{1em}%
@@ -239,6 +240,7 @@
 
 \newenvironment{abstract}{%
 \clearpage%
+\phantomsection%
 \addcontentsline{toc}{chapter}{Abstract}%
 \begin{center}
 \textbf{ABSTRACT}
@@ -292,6 +294,7 @@
 
 \newenvironment{dedication}{%
   \cleardoublepage%
+  \phantomsection%
   \markboth{}{}%
   \addcontentsline{toc}{section}{Dedication}%
   \null\vfill%
