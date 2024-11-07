@@ -16,13 +16,29 @@
 %     of the document in order to indicate corrections/revisions that
 %     should be made.
 
-% IMPORTANT NOTE:
+% IMPORTANT NOTES:
+%
 % The University of Victoria changed the rules for theses at some point in
 % time to require pagination for one-sided printing.  As a result, the
 % oneside option must be used.
+%
+% The University of Victoria should allow (unless the rules have changed
+% since the time of this writing) font sizes of 10, 11, or 12 point.
+% There are numerous tradeoffs in the choice of font size:
+%   - larger fonts often make typesetting more difficult because
+%     many tables/figures/equations/listings fall outside the margins of
+%     the page
+%   - larger fonts are easier for people with poor eyesight to read
+%     when viewing a document on a small display
+% So, generally, larger fonts have both advantages and disadvantages.
+% Personally, I would recommend using a larger font as long as you
+% do not encounter problems with tables/equations/figures not fitting
+% on the page.
 
 \documentclass[
-  10pt,
+  %10pt,
+  11pt, % NOTE: Perhaps, this is the best compromise for font size?
+  %12pt,
   oneside,
   %review, % Uncomment for review mode.  (See above for details.)
 ]{uvicthesis}
